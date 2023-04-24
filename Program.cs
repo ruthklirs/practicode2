@@ -18,14 +18,14 @@ app.UseCors(builder => builder
      .AllowAnyMethod()
      .AllowAnyHeader());  
 
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+// }
 app.UseCors("corsapp");
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "TaskServer API is running!");
 app.MapGet("/items", async(TasksContex tc)=>
 await tc.Items.ToListAsync());
 
