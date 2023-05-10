@@ -18,7 +18,7 @@ public partial class TasksContex : DbContext
     public virtual DbSet<Item> Items { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("name=Tasks", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql"));
+        => optionsBuilder.UseMySql("server=bn0bln5q8nacs0m5yeam-mysql.services.clever-cloud.com;user=uqet0quzmctqv8rt;password=XHQ6S4iuup13k8umadaa;database=bn0bln5q8nacs0m5yeam", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -40,3 +40,11 @@ public partial class TasksContex : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
+
+
+
+
+
+
+
+

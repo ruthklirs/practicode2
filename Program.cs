@@ -11,7 +11,32 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("OpenPolicy",
+                      policy =>
+                      {
+                          policy.WithOrigins("https://taskclient.onrender.com/")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod()
+                                .AllowCredentials(); // Added AllowCredentials
+                      });
+});
+
 var app = builder.Build();
+
+// app.UseCors(builder => builder
+//        .AllowAnyHeader()
+//        .AllowAnyMethod()
+//        .AllowAnyOrigin()
+//     );
+
+
+
+
+ 
+
+
 
 app.UseCors(builder => builder
      .AllowAnyOrigin()
